@@ -48,9 +48,19 @@ app.post('/', function(req, res){
 
 });
 
+app.delete('/:id', function(req, res){
+  Item.findById(req.params.id, function(err, item){
+    if (err) return res.send(500, err);
+
+    item.remove(function(err){
+      if (err) return res.send(500, err);
+      res.json({ success: 'true' })
+    });
+  });
+});
+
 // app.get('/:id', show)
 // app.put('/:id', update)
-// app.delete('/:id', remove)
 
 app.listen(port, function(){
   console.log('listening on port ' + port);
