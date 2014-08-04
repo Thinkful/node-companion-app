@@ -1,14 +1,18 @@
 <% include _header %>
 
-<h1>Listing Items</h1>
+<div id="index" class='contain'>
+  <h1>Listing Items</h1>
 
-<ul id='items'>
-<% items.forEach(function(item){ %>
-  <li>
-    <h3 class='name'><%= item.name %></h3>
-    <p class='description'><%= item.description %></p>
-  </li>
-<% }); %>
-</ul>
+  <a class='add contain' href='new'>Add an item</a>
+
+  <ul class='items'>
+  <% items.forEach(function(item){ %>
+    <li>
+      <h3 class='name'><%= item.name %></h3>
+      <p class='description'><%= item.description %></p>
+    </li>
+  <% }); %>
+  </ul>
+</div>
 
 <% include _footer %>

@@ -1,19 +1,28 @@
+/* global */
+
 body {
   -webkit-font-smoothing: antialiased;
   font-family: sans-serif;
   padding: 30px;
+  color: #333;
 }
 
 h1 {
   text-align: center;
 }
 
-#items {
+.contain {
   max-width: 650px;
   margin: 0 auto;
 }
 
-#items li {
+/* index */
+
+#index .items {
+  padding: 0;
+}
+
+#index .items li {
   background: #f1f1f1;
   list-style: none;
   margin-bottom: 10px;
@@ -21,6 +30,28 @@ h1 {
   padding: 1px 15px;
 }
 
-#items h3, p {
+#index .items h3, p {
   margin: .5em 0;
+}
+
+/* new */
+
+#new form {
+  background: #f1f1f1;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+#new .field {
+  margin-bottom: 10px;
+}
+
+#new form input[type=text], #new form textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#new form textarea {
+  min-height: 70px;
 }
