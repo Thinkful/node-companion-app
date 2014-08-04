@@ -1,5 +1,14 @@
 <% include _header %>
 
-<p>index page</p>
+<h1>Listing Items</h1>
+
+<ul id='items'>
+<% items.forEach(function(item){ %>
+  <li>
+    <h3 class='name'><%= item.name %></h3>
+    <p class='description'><%= item.description %></p>
+  </li>
+<% }); %>
+</ul>
 
 <% include _footer %>

@@ -1,4 +1,26 @@
 body {
   -webkit-font-smoothing: antialiased;
   font-family: sans-serif;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#items {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#items li {
+  background: #f1f1f1;
+  list-style: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 1px 15px;
+}
+
+#items h3, p {
+  margin: .5em 0;
 }

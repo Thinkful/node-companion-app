@@ -3,13 +3,18 @@
   "version": "0.0.0",
   "description": "a personal inventory app",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "author": "Jeff Escalante",
   "license": "MIT",
   "dependencies": {
     "express": "4.x",
-    "ejs": "1.x"
+    "ejs": "1.x",
+    "mongoose": "3.x"
+  },
+  "devDependencies": {
+    "when": "~3.4.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node seeds.js"
   }
 }
