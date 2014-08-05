@@ -12,10 +12,14 @@
     "body-parser": "~1.5.2"
   },
   "devDependencies": {
-    "when": "~3.4.2"
+    "when": "~3.4.2",
+    "chai": "~1.9.1",
+    "mocha": "~1.21.3",
+    "chai-http": "~0.4.0"
   },
   "scripts": {
     "start": "node index.js",
-    "seed": "node seeds.js"
+    "seed": "node seeds.js",
+    "test": "./node_modules/.bin/mocha"
   }
 }
