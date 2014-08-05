@@ -9,13 +9,14 @@
     "express": "4.x",
     "ejs": "1.x",
     "mongoose": "3.x",
-    "body-parser": "~1.5.2"
+    "body-parser": "1.x"
   },
   "devDependencies": {
-    "when": "~3.4.2",
-    "chai": "~1.9.1",
-    "mocha": "~1.21.3",
-    "chai-http": "~0.4.0"
+    "when": "3.x",
+    "chai": "1.x",
+    "mocha": "1.x",
+    "chai-http": "0.4.x",
+    "jsdom": "0.11.x"
   },
   "scripts": {
     "start": "node index.js",
