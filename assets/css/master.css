@@ -31,6 +31,11 @@ h1 {
   overflow: hidden;
 }
 
+#index .items li a {
+  color: #333;
+  text-decoration: none;
+}
+
 #index .items h3, p {
   margin: .5em 0;
 }

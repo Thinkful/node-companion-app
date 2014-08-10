@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
   Item.find(function(err, items){
-    if (err) return res.send(500, err);
+    if (err) return error(res, err)
     res.render('index', { items: items });
   });
 });
@@ -42,7 +42,7 @@ app.post('/', function(req, res){
   });
 
   item.save(function(err, item){
-    if (err) return res.send(500, err);
+    if (err) return error(res, err)
     res.redirect('/');
   });
 
@@ -50,17 +50,30 @@ app.post('/', function(req, res){
 
 app.delete('/:id', function(req, res){
   Item.findById(req.params.id, function(err, item){
-    if (err) return res.send(500, err);
+    if (err) return error(res, err)
 
     item.remove(function(err){
-      if (err) return res.send(500, err);
+      if (err) return error(res, err)
       res.json({ success: 'true' })
     });
   });
 });
 
-// app.get('/:id', show)
+app.get('/:id', function(req, res){
+  Item.findById(req.params.id, function(err, item){
+    if (err) return error(res, err)
+
+    res.render('show', item);
+  });
+});
+
 // app.put('/:id', update)
+
+// utility functions
+
+function error(res, err){
+  res.status(500).send(err);
+}
 
 app.listen(port, function(){
   console.log('listening on port ' + port);

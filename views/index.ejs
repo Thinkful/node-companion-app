@@ -8,10 +8,12 @@
   <ul class='items'>
   <% items.forEach(function(item){ %>
     <li>
-      <div class="info">
-        <h3 class='name'><%= item.name %></h3>
-        <p class='description'><%= item.description %></p>
-      </div>
+      <a href="<%= item._id %>">
+        <div class="info">
+          <h3 class='name'><%= item.name %></h3>
+          <p class='description'><%= item.description %></p>
+        </div>
+      </a>
       <div data-id="<%= item._id %>" class="delete">&times;</div>
     </li>
   <% }); %>

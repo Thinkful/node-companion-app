@@ -31,13 +31,24 @@ describe('items', function(){
     });
   });
 
-  it('GET /:id should show an item');
+  it('GET /:id should show an item', function(done){
+    chai.request(app).get('/' + id).res(function(res){
+      res.should.have.status(200);
+      res.should.be.html;
+      render_dom(res.text, function(err, $){
+        $('h2').text().should.equal('foobar');
+        $('p').text().should.equal('test description');
+        done();
+      });
+    });
+  });
+
   it('PUT /:id should update an item');
 
   it('DELETE /:id should remove an item', function(){
     chai.request(app).del('/'+id).res(function(res){
       res.should.have.status(200);
-      res.should.be.html;
+      res.should.be.json;
       render_dom(res.text, function(err, $){
         info = $('li').last().find('.info')
         info.find('.name').text().should.not.equal('foobar');
