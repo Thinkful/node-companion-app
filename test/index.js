@@ -43,7 +43,20 @@ describe('items', function(){
     });
   });
 
-  it('PUT /:id should update an item');
+  it('POST /:id should update an item', function(done){
+    chai.request(app).post('/' + id)
+    .req(function(req){
+      req.send("name=foobar&description=different%20description")
+    }).res(function(res){
+      res.should.have.status(200);
+      res.should.be.html;
+      render_dom(res.text, function(err, $){
+        $('h2').text().should.equal('foobar');
+        $('p').text().should.equal('different description');
+        done();
+      });
+    });
+  });
 
   it('DELETE /:id should remove an item', function(){
     chai.request(app).del('/'+id).res(function(res){

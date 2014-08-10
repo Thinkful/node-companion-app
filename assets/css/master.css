@@ -44,37 +44,47 @@ h1 {
   float: left;
 }
 
-#index .items .delete {
+#index .items .delete, #index .items .edit {
   float: right;
-  color: #CE5B5B;
-  margin-top: 5px;
-  font-size: 1.3em;
   opacity: .5;
   cursor: pointer;
 }
 
-#index .items .delete:hover {
+#index .items .delete {
+  color: #CE5B5B;
+  margin-top: 5px;
+  font-size: 1.3em;
+}
+
+#index .items .edit {
+  color: #E7A822;
+  margin-top: 8px;
+  margin-right: 7px;
+  font-size: 1.2em;
+}
+
+#index .items .delete:hover, #index .items .edit:hover {
   opacity: 1;
 }
 
-/* new */
+/* new/edit form */
 
-#new form {
+form {
   background: #f1f1f1;
   padding: 15px 30px;
   border-radius: 5px;
 }
 
-#new .field {
+.field {
   margin-bottom: 10px;
 }
 
-#new form input[type=text], #new form textarea {
+form input[type=text], form textarea {
   width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
 }
 
-#new form textarea {
+form textarea {
   min-height: 70px;
 }

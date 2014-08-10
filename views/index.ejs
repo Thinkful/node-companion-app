@@ -1,6 +1,6 @@
 <% include _header %>
 
-<div id="index" class='contain'>
+<div id='index' class='contain'>
   <h1>Listing Items</h1>
 
   <a class='add contain' href='new'>Add an item</a>
@@ -8,13 +8,14 @@
   <ul class='items'>
   <% items.forEach(function(item){ %>
     <li>
-      <a href="<%= item._id %>">
-        <div class="info">
+      <a href='<%= item._id %>'>
+        <div class='info'>
           <h3 class='name'><%= item.name %></h3>
           <p class='description'><%= item.description %></p>
         </div>
       </a>
-      <div data-id="<%= item._id %>" class="delete">&times;</div>
+      <div data-id='<%= item._id %>' class='delete'>&times;</div>
+      <a href='<%= item._id %>/edit' class='edit'>&#9998;</a>
     </li>
   <% }); %>
   </ul>

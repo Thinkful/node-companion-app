@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
 var path = require('path');
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 var port = 3000;
 var app = express();
 
@@ -17,8 +18,9 @@ var Item = require('./models/item');
 
 mongoose.connect('mongodb://localhost/inventory-dev');
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'assets')))
+app.use(express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.urlencoded({ extended: true }));
+if (!process.env.TEST) app.use(morgan('dev'));
 
 //
 // routes
@@ -26,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
   Item.find(function(err, items){
-    if (err) return error(res, err)
+    if (err) return error(res, err);
     res.render('index', { items: items });
   });
 });
@@ -42,7 +44,7 @@ app.post('/', function(req, res){
   });
 
   item.save(function(err, item){
-    if (err) return error(res, err)
+    if (err) return error(res, err);
     res.redirect('/');
   });
 
@@ -53,21 +55,36 @@ app.delete('/:id', function(req, res){
     if (err) return error(res, err)
 
     item.remove(function(err){
-      if (err) return error(res, err)
-      res.json({ success: 'true' })
+      if (err) return error(res, err);
+      res.json({ success: 'true' });
     });
   });
 });
 
 app.get('/:id', function(req, res){
   Item.findById(req.params.id, function(err, item){
-    if (err) return error(res, err)
+    if (err) return error(res, err);
 
     res.render('show', item);
   });
 });
 
-// app.put('/:id', update)
+app.get('/:id/edit', function(req, res){
+  Item.findById(req.params.id, function(err, item){
+    if (err) return error(res, err);
+    res.render('edit', item);
+  });
+});
+
+// technically, this should be a PUT, but html forms can't send a PUT request
+app.post('/:id', function(req, res){
+  Item.findByIdAndUpdate(req.params.id,
+  { name: req.body.name, description: req.body.description },
+  function(err, item){
+    if (err) return error(res, err)
+    res.render('show', item);
+  });
+});
 
 // utility functions
 

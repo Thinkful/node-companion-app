@@ -1,3 +1,5 @@
+process.env.TEST = true;
+
 var chai = require('chai');
 var chai_http = require('chai-http');
 var jsdom = require('jsdom');

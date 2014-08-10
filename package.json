@@ -9,7 +9,8 @@
     "express": "4.x",
     "ejs": "1.x",
     "mongoose": "3.x",
-    "body-parser": "1.x"
+    "body-parser": "1.x",
+    "morgan": "~1.2.2"
   },
   "devDependencies": {
     "when": "3.x",
