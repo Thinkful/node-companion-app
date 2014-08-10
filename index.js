@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var path = require('path');
 var mongoose = require('mongoose');
-var port = 3000;
+var port = process.env.PORT || 3000;
 var app = express();
 
 //
@@ -16,11 +16,16 @@ var Item = require('./models/item');
 // configuration
 //
 
-mongoose.connect('mongodb://localhost/inventory-dev');
+databaseUrl = 'mongodb://localhost/inventory-dev'
+if (process.env.NODE_ENV === 'production') {
+  databaseUrl = 'external db address here!';
+}
+
+mongoose.connect(databaseUrl);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.urlencoded({ extended: true }));
-if (!process.env.TEST) app.use(morgan('dev'));
+if (process.env.NODE_ENV != 'test') app.use(morgan('dev'));
 
 //
 // routes
