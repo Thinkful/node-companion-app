@@ -16,7 +16,7 @@ var Item = require('./models/item');
 // configuration
 //
 
-databaseUrl = 'mongodb://localhost/inventory-dev'
+var databaseUrl = 'mongodb://localhost/inventory-dev';
 if (process.env.NODE_ENV === 'production') {
   databaseUrl = 'external db address here!';
 }
@@ -57,7 +57,7 @@ app.post('/', function(req, res){
 
 app.delete('/:id', function(req, res){
   Item.findById(req.params.id, function(err, item){
-    if (err) return error(res, err)
+    if (err) return error(res, err);
 
     item.remove(function(err){
       if (err) return error(res, err);
@@ -86,7 +86,7 @@ app.post('/:id', function(req, res){
   Item.findByIdAndUpdate(req.params.id,
   { name: req.body.name, description: req.body.description },
   function(err, item){
-    if (err) return error(res, err)
+    if (err) return error(res, err);
     res.render('show', item);
   });
 });
