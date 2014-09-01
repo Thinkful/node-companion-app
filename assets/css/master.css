@@ -22,50 +22,50 @@ h1 {
   padding: 0;
 }
 
-#index .items li {
-  background: #f1f1f1;
-  list-style: none;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  padding: 1px 15px;
-  overflow: hidden;
-}
+	#index .items li {
+	  background: #f1f1f1;
+	  list-style: none;
+	  margin-bottom: 10px;
+	  border-radius: 5px;
+	  padding: 1px 15px;
+	  overflow: hidden;
+	}
 
-#index .items li a {
-  color: #333;
-  text-decoration: none;
-}
+		#index .items li a {
+		  color: #333;
+		  text-decoration: none;
+		}
 
-#index .items h3, p {
-  margin: .5em 0;
-}
+	#index .items h3, p {
+	  margin: .5em 0;
+	}
 
-#index .items .info {
-  float: left;
-}
+	#index .items .info {
+	  float: left;
+	}
 
-#index .items .delete, #index .items .edit {
-  float: right;
-  opacity: .5;
-  cursor: pointer;
-}
+	#index .items .delete, #index .items .edit {
+	  float: right;
+	  opacity: .5;
+	  cursor: pointer;
+	}
 
-#index .items .delete {
-  color: #CE5B5B;
-  margin-top: 5px;
-  font-size: 1.3em;
-}
+	#index .items .delete {
+	  color: #CE5B5B;
+	  margin-top: 5px;
+	  font-size: 1.3em;
+	}
 
-#index .items .edit {
-  color: #E7A822;
-  margin-top: 8px;
-  margin-right: 7px;
-  font-size: 1.2em;
-}
+	#index .items .edit {
+	  color: #E7A822;
+	  margin-top: 8px;
+	  margin-right: 7px;
+	  font-size: 1.2em;
+	}
 
-#index .items .delete:hover, #index .items .edit:hover {
-  opacity: 1;
-}
+		#index .items .delete:hover, #index .items .edit:hover {
+		  opacity: 1;
+		}
 
 /* new/edit form */
 
@@ -75,16 +75,16 @@ form {
   border-radius: 5px;
 }
 
-.field {
-  margin-bottom: 10px;
-}
+	.field {
+	  margin-bottom: 10px;
+	}
 
-form input[type=text], form textarea {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-}
+	form input[type=text], form textarea {
+	  width: 100%;
+	  padding: 5px;
+	  border: 1px solid #ccc;
+	}
 
-form textarea {
-  min-height: 70px;
-}
+	form textarea {
+	  min-height: 70px;
+	}

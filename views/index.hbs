@@ -1,0 +1,20 @@
+<div id='index' class='contain'>
+  <h1>Listing Items</h1>
+
+  <a class='add contain' href='new'>Add an item</a>
+
+  <ul class='items'>
+  {{#each items}}
+    <li>
+      <a href='{{_id}}'>
+        <div class='info'>
+          <h3 class='name'>{{name}}</h3>
+          <p class='description'>{{description}}</p>
+        </div>
+      </a>
+      <div data-id='{{_id}}' class='delete'>&times;</div>
+      <a href='{{_id}}/edit' class='edit'>&#9998;</a>
+    </li>
+  {{/each}}
+  </ul>
+</div>
