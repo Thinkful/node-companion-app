@@ -1,14 +1,7 @@
-<h1>New Item</h1>
+<h1>Add New Item</h1>
 
-<form class='contain' method='POST' action='/'>
-  <div class='field'>
-    <label for='name'>Name</label>
-    <input type='text' name='name' />
-  </div>
-  <div class='field'>
-    <label for='description'>Description</label>
-    <textarea name="description"></textarea>
-  </div>
-  <input type="submit">
-  <a href="/">Cancel</a>
-</form>
+<div class="content">
+	<form method="POST" action="/">
+		{{> form}}
+	</form>
+</div>

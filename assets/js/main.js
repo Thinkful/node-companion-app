@@ -4,7 +4,7 @@ $(function () {
 	// system like backbone, angular, etc might help things. If you had a larger
 	// and more complex app, this type of code can get very messy, very fast.
 
-	$('#index .delete').on('click', function () {
+	$('.items .actions .delete').on('click', function () {
 		var result = confirm('Are you sure?');
 		if (result) {
 			$.ajax({
